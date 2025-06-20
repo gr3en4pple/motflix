@@ -1,21 +1,33 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Movie } from '@/config/movies'
-import { Clock, Play, Plus, Star, ThumbsUp } from 'lucide-react'
+import type { Movie } from '@/types'
+import { Clock, Play, Star } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
-function MoviePoster({ movie }: { movie: Movie }) {
+const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
-    <div className="relative duration-300 cursor-pointer group ">
-      <div className="overflow-hidden rounded-lg shadow-lg bg-zinc-900">
-        <div className="group-hover:scale-105 transition-transform delay-100 relative overflow-hidden aspect-[2/3]">
+    <div className="relative duration-300 ">
+      <div className="overflow-hidden rounded-lg shadow-lg bg-zinc-800">
+        <div className="relative overflow-hidden transition-transform delay-100 cursor-pointer group hover:scale-105 aspect-[2/3]">
           <Image
             src={movie.poster || '/placeholder.svg'}
             alt={movie.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-110"
           />
+
+          <div className="absolute inset-0 flex items-center justify-center invisible transition-all opacity-0 group-hover:visible group-hover:opacity-100 bg-black/50">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex items-center justify-center w-10 h-10 transition-all duration-200 transform bg-red-600 rounded-full shadow-2xl hover:bg-red-700 md:w-16 md:h-16 hover:scale-110">
+                <Play
+                  size={100}
+                  className="w-4 h-4 text-white md:w-6 md:h-6 fill-white"
+                />
+              </div>
+            </div>
+            <div className="absolute w-16 h-16 -translate-x-1/2 -translate-y-1/2 border-2 border-red-600 rounded-full left-1/2 top-1/2 md:w-20 md:h-20 animate-ping opacity-30" />
+          </div>
         </div>
 
         <div className="p-3 md:p-4">
@@ -45,8 +57,8 @@ function MoviePoster({ movie }: { movie: Movie }) {
             {movie.description}
           </p>
 
-          <div className="flex flex-wrap gap-1 mb-3 md:mb-4">
-            {movie.genre.slice(0, 2).map((g) => (
+          <div className="flex flex-wrap gap-1 ">
+            {movie.genre.map((g) => (
               <Badge
                 key={g}
                 variant="secondary"
@@ -56,32 +68,10 @@ function MoviePoster({ movie }: { movie: Movie }) {
               </Badge>
             ))}
           </div>
-
-          <div className="flex gap-2">
-            <Button
-              size="sm"
-              className="flex-1 text-xs font-semibold text-white bg-red-600 border-0 hover:bg-red-700 md:text-sm"
-            >
-              <Play className="w-3 h-3 mr-1 md:h-4 md:w-4 fill-white" />
-              Play
-            </Button>
-            <Button
-              size="sm"
-              className="px-2 text-white bg-gray-700 border-0 hover:bg-gray-600 md:px-3"
-            >
-              <Plus className="w-3 h-3 md:h-4 md:w-4" />
-            </Button>
-            <Button
-              size="sm"
-              className="px-2 text-white bg-gray-700 border-0 hover:bg-gray-600 md:px-3"
-            >
-              <ThumbsUp className="w-3 h-3 md:h-4 md:w-4" />
-            </Button>
-          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default MoviePoster
+export default MovieCard

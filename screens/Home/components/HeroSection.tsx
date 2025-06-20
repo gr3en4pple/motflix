@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import type { Movie } from '@/config/movies'
+import type { Movie } from '@/types'
 import { Clock, Info, Play, Star } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
@@ -8,7 +8,10 @@ import React from 'react'
 const HeroSection = ({ movie }: { movie: Movie }) => {
   return (
     <div className="relative flex items-center h-screen">
-      <div style={{ backgroundImage: `url(${movie.poster})` }} className="absolute w-full h-full bg-center bg-no-repeat bg-cover" />
+      <div
+        style={{ backgroundImage: `url(${movie.poster})` }}
+        className="absolute w-full h-full bg-center bg-no-repeat bg-cover"
+      />
       <div className="absolute inset-0">
         <Image
           src={movie.backdrop || '/placeholder.svg'}

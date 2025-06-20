@@ -1,15 +1,4 @@
-export interface Movie {
-  id: number
-  title: string
-  genre: string[]
-  year: number
-  duration: string
-  imdbRating: number
-  poster: string
-  backdrop: string
-  description: string
-  videoPreview?: string
-}
+import { Movie } from '@/types'
 
 const Movies: Movie[] = [
   {
@@ -33,7 +22,8 @@ const Movies: Movie[] = [
     year: 2010,
     duration: '2h 28m',
     imdbRating: 8.8,
-    poster: 'https://xl.movieposterdb.com/10_06/2010/1375666/xl_1375666_07030c72.jpg?v=2025-06-19%2019:02:07',
+    poster:
+      'https://xl.movieposterdb.com/10_06/2010/1375666/xl_1375666_07030c72.jpg?v=2025-06-19%2019:02:07',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
@@ -46,7 +36,8 @@ const Movies: Movie[] = [
     year: 2014,
     duration: '2h 49m',
     imdbRating: 8.6,
-    poster: 'https://xl.movieposterdb.com/14_09/2014/816692/xl_816692_593eaeff.jpg?v=2025-06-12%2011:12:03',
+    poster:
+      'https://xl.movieposterdb.com/14_09/2014/816692/xl_816692_593eaeff.jpg?v=2025-06-12%2011:12:03',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
@@ -59,7 +50,8 @@ const Movies: Movie[] = [
     year: 1999,
     duration: '2h 16m',
     imdbRating: 8.7,
-    poster: 'https://xl.movieposterdb.com/25_03/1999/133093/xl_the-matrix-movie-poster_55229477.png?v=2025-04-20%2010:45:34',
+    poster:
+      'https://xl.movieposterdb.com/25_03/1999/133093/xl_the-matrix-movie-poster_55229477.png?v=2025-04-20%2010:45:34',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'A computer programmer is led to fight an underground war against powerful computers who have constructed his entire reality.',
@@ -72,7 +64,8 @@ const Movies: Movie[] = [
     year: 1994,
     duration: '2h 34m',
     imdbRating: 8.9,
-    poster: 'https://xl.movieposterdb.com/08_08/1994/110912/xl_110912_70b77673.jpg',
+    poster:
+      'https://xl.movieposterdb.com/08_08/1994/110912/xl_110912_70b77673.jpg',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.',
@@ -85,7 +78,8 @@ const Movies: Movie[] = [
     year: 1999,
     duration: '2h 19m',
     imdbRating: 8.8,
-    poster: 'https://xl.movieposterdb.com/13_06/1999/137523/xl_137523_1d292ea3.jpg?v=2025-05-06%2023:28:07',
+    poster:
+      'https://xl.movieposterdb.com/13_06/1999/137523/xl_137523_1d292ea3.jpg?v=2025-05-06%2023:28:07',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'An insomniac office worker and a devil-may-care soap maker form an underground fight club.',
@@ -98,7 +92,8 @@ const Movies: Movie[] = [
     year: 1972,
     duration: '2h 55m',
     imdbRating: 9.2,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/22_07/1972/68646/xl_68646_8c811dec.jpg?v=2025-06-16%2012:41:23',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.',
@@ -111,7 +106,8 @@ const Movies: Movie[] = [
     year: 1994,
     duration: '2h 22m',
     imdbRating: 8.8,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/12_04/1994/109830/xl_109830_58524cd6.jpg?v=2025-06-14%2017:14:56',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'The presidencies of Kennedy and Johnson, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man.',
@@ -124,7 +120,8 @@ const Movies: Movie[] = [
     year: 1994,
     duration: '2h 22m',
     imdbRating: 9.3,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/05_02/1994/0111161/xl_7266_0111161_d2436dce.jpg?v=2025-03-30%2015:47:34',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
@@ -137,7 +134,8 @@ const Movies: Movie[] = [
     year: 1990,
     duration: '2h 26m',
     imdbRating: 8.7,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/12_11/1990/99685/xl_99685_e05d97bc.jpg?v=2025-05-27%2005:03:43',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill.',
@@ -150,7 +148,8 @@ const Movies: Movie[] = [
     year: 2001,
     duration: '2h 58m',
     imdbRating: 8.8,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/22_06/2001/120737/xl_120737_0ff31144.jpg?v=2025-06-20%2013:56:51',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring.',
@@ -163,7 +162,8 @@ const Movies: Movie[] = [
     year: 1977,
     duration: '2h 1m',
     imdbRating: 8.6,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/06_07/1977/0076759/xl_123404_0076759_e7bfc429.jpg?v=2025-06-18%2020:24:11',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy.',
@@ -176,7 +176,8 @@ const Movies: Movie[] = [
     year: 2019,
     duration: '3h 1m',
     imdbRating: 8.4,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/20_05/2019/4154796/xl_4154796_2542f70b.jpg?v=2025-06-16%2021:34:24',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       "After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions.",
@@ -189,7 +190,8 @@ const Movies: Movie[] = [
     year: 2019,
     duration: '2h 12m',
     imdbRating: 8.5,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/21_11/2019/6751668/xl_6751668_0d0409c5.jpg?v=2025-06-09%2008:02:30',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'A poor family schemes to become employed by a wealthy family by infiltrating their household.',
@@ -202,7 +204,8 @@ const Movies: Movie[] = [
     year: 2019,
     duration: '2h 2m',
     imdbRating: 8.4,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/22_05/2019/7286456/xl_7286456_b64564c5.jpg?v=2025-06-15%2005:15:06',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'A mentally troubled comedian is disregarded by society and turns to a life of crime and chaos in Gotham City.',
@@ -215,7 +218,8 @@ const Movies: Movie[] = [
     year: 2018,
     duration: '1h 57m',
     imdbRating: 8.4,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/22_10/2018/4633694/xl_spider-man-into-the-spider-verse-movie-poster_a7f62b30.jpeg?v=2025-06-14%2008:15:16',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'Teen Miles Morales becomes Spider-Man of his reality, crossing his path with five counterparts from other dimensions.',
@@ -228,7 +232,8 @@ const Movies: Movie[] = [
     year: 2019,
     duration: '1h 59m',
     imdbRating: 8.3,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/21_01/2019/8579674/xl_8579674_0d3547f1.jpg?v=2025-04-20%2004:15:40',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'Two British soldiers are tasked with delivering a critical message to prevent a doomed attack during World War I.',
@@ -241,7 +246,8 @@ const Movies: Movie[] = [
     year: 2015,
     duration: '2h',
     imdbRating: 8.1,
-    poster: '/placeholder.svg?height=600&width=400',
+    poster:
+      'https://xl.movieposterdb.com/21_03/2015/1392190/xl_1392190_cce6885e.jpg?v=2025-06-05%2003:51:02',
     backdrop: '/placeholder.svg?height=800&width=1400',
     description:
       'In a post-apocalyptic wasteland, Max teams up with a mysterious woman to flee from a tyrannical warlord.',

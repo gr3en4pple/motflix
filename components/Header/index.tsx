@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import SearchInput from './SearchInput'
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -9,11 +10,13 @@ const Header = () => {
     <nav className="sticky top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-sm">
       <div className="flex items-center justify-between px-4 py-3 md:px-8 md:py-4">
         <div className="text-2xl font-bold text-red-600 md:text-3xl">
-          MOTLIX
+          MỌTFLIX
         </div>
 
         {/* Desktop Navigation */}
+        
         <div className="items-center hidden gap-8 text-white md:flex">
+          <SearchInput />
           <Link
             href="/"
             className="font-medium transition-colors hover:text-gray-300"
