@@ -1,17 +1,39 @@
+'use client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import useScrollDownForMore from '@/hooks/useScrollDownForMore'
 import type { Movie } from '@/types'
-import { Clock, Info, Play, Star } from 'lucide-react'
+import { ChevronDown, Clock, Info, Play, Star } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
 const HeroSection = ({ movie }: { movie: Movie }) => {
+  const { handleScrollDown, isVisible } = useScrollDownForMore({
+    selector: "[data-movie-section='movies-list']"
+  })
+
   return (
-    <div className="relative flex items-center h-screen">
+    <div className="relative flex items-center h-[calc(100vh-72px)]">
       <div
         style={{ backgroundImage: `url(${movie.poster})` }}
         className="absolute w-full h-full bg-center bg-no-repeat bg-cover"
       />
+      {isVisible && (
+        <div
+          onClick={handleScrollDown}
+          className="absolute z-10 flex flex-col items-center justify-center transition-all duration-300 -translate-x-1/2 cursor-pointer left-1/2 bottom-10 "
+          aria-label="Scroll down for more movies"
+        >
+          <ChevronDown className="w-6 h-6 text-white md:h-7 md:w-7 chevron-bounce" />
+          <ChevronDown
+            className="w-4 h-4 -mt-2 md:h-5 md:w-5 text-white/70 chevron-bounce"
+            style={{ animationDelay: '0.2s' }}
+          />
+
+          <div className="text-xs text-white">Scroll down for more movies</div>
+        </div>
+      )}
+
       <div className="absolute inset-0">
         <Image
           src={movie.backdrop || '/placeholder.svg'}

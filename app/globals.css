@@ -121,7 +121,6 @@
   }
 }
 
-/* Swiper Custom Styles */
 .movie-swiper {
   padding: 0 !important;
   overflow: visible !important;
@@ -215,4 +214,20 @@
 
 .slide-in-from-top-2 {
   animation-name: slide-in-from-top-2;
+}
+
+@keyframes chevron-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(5px);
+    opacity: 0.7;
+  }
+}
+
+.chevron-bounce {
+  animation: chevron-bounce 1.1s ease-in-out infinite;
 }

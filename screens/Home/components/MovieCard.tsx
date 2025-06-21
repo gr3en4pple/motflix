@@ -1,9 +1,14 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import type { Movie } from '@/types'
-import { Clock, Play, Star } from 'lucide-react'
+import { Clock, Info, Play, Star } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
   return (
@@ -11,19 +16,22 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
       <div className="overflow-hidden rounded-lg shadow-lg bg-zinc-800">
         <div className="relative overflow-hidden transition-transform delay-100 cursor-pointer group hover:scale-105 aspect-[2/3]">
           <Image
-            src={movie.poster || '/placeholder.svg'}
+            src={movie.poster}
             alt={movie.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-110"
           />
 
           <div className="absolute inset-0 flex items-center justify-center invisible transition-all opacity-0 group-hover:visible group-hover:opacity-100 bg-black/50">
+            <div className="absolute transition-all opacity-0 group-hover:right-6 group-hover:opacity-100 group-hover:bottom-6 right-4 bottom-4">
+              <Badge className="bg-zinc-800 text-xs space-x-1 h-6 !px-1">
+                <Info className="w-6 h-6 text-white" />
+                More info
+              </Badge>
+            </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex items-center justify-center w-10 h-10 transition-all duration-200 transform bg-red-600 rounded-full shadow-2xl hover:bg-red-700 md:w-16 md:h-16 hover:scale-110">
-                <Play
-                  size={100}
-                  className="w-4 h-4 text-white md:w-6 md:h-6 fill-white"
-                />
+              <div className="flex items-center justify-center w-10 h-10 transition-all duration-200 transform bg-red-600 rounded-full shadow-2xl hover:bg-red-700 md:w-14 md:h-14 scale-140 group-hover:scale-100">
+                <Play className="w-4 h-4 text-white md:w-8 md:h-8 fill-white" />
               </div>
             </div>
             <div className="absolute w-16 h-16 -translate-x-1/2 -translate-y-1/2 border-2 border-red-600 rounded-full left-1/2 top-1/2 md:w-20 md:h-20 animate-ping opacity-30" />
