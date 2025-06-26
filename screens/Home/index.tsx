@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="">
       <HeroSection movie={Interstellar} />
-      <div data-movie-section="movies-list" className="mt-10">
+      <div data-movie-section="movies-list" className="mt-10 overflow-x-hidden">
         {hasFilter ? (
           <div className="px-4 md:px-8">
             <div className="mb-6 text-lg font-semibold text-white md:mb-10 md:text-2xl">Search Results:</div>
